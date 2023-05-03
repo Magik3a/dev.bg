@@ -43,9 +43,9 @@ jobs:
     - name: Publish .NET Core Project
       run: dotnet publish src/BlazorApp1/BlazorApp1.csproj -c Release -o blazorapp1 /p:AssemblyVersion=1.0.0.${{ github.run_number }} /p:Version=1.0.0.${{ github.run_number }}
     
-    # changes the base-tag in index.html from '/' to 'dev-bg' to match GitHub Pages repository subdirectory
+    # changes the base-tag in index.html from '/' to 'dev.bg' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html 
-      run: sed -i 's/<base href="\/" \/>/<base href="\/dev-bg\/" \/>/g' blazorapp1/wwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/dev.bg\/" \/>/g' blazorapp1/wwwroot/index.html
   
     - name: Setup Pages
       uses: actions/configure-pages@v2
