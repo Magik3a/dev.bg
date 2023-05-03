@@ -13,10 +13,10 @@ namespace BlazorApp1TestProject.Selenium
             // initialize the web driver
             var chromeOptions = new ChromeOptions();
 #if !DEBUG
-            chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
-            chromeOptions.addArguments("disable-infobars"); // disabling infobars
-            chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-            chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
+            chromeOptions.AddArguments("start-maximized"); // open Browser in maximized mode
+            chromeOptions.AddArguments("disable-infobars"); // disabling infobars
+            chromeOptions.AddArguments("--disable-extensions"); // disabling extensions
+            chromeOptions.AddArguments("--disable-gpu"); // applicable to windows os only
             chromeOptions.AddArguments("--headless");
             chromeOptions.AddArguments("--no-sandbox");  // Bypass OS security model
             chromeOptions.AddArguments("--disable-dev-shm-usage"); // overcome limited resource problems
