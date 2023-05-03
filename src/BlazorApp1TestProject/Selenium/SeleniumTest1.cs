@@ -1,5 +1,3 @@
-using OpenQA.Selenium.Support.UI;
-
 namespace BlazorApp1TestProject.Selenium
 {
     [TestClass, TestCategory("Selenium")] // class containing the unit tests. 
@@ -38,6 +36,7 @@ namespace BlazorApp1TestProject.Selenium
             driver.Url = "https://magik3a.github.io/dev.bg/";
             Assert.AreEqual(driver.Url, "https://magik3a.github.io/dev.bg/");
         }
+
         [TestMethod] //method that contains the test method
         public void TestMethod2()
         {

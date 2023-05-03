@@ -1,0 +1,25 @@
+name: Security Scan
+
+# Only trigger, when the build workflow succeeded
+on:
+  workflow_run:
+    workflows: ["Deploy static content to Pages"]
+    types:
+      - completed
+
+jobs:
+  build:
+  
+    # use ubuntu-latest image to run steps on
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: OWASP ZAP Scan
+      uses: owasp/zap-full-scan-action@v2.3.0
+      with:
+        target: https://magik3a.github.io/dev.bg
+        recursive: true
+        alertThreshold: Medium
+        activeScan: true
+        spider: true
+        showAdvancedUi: true
