@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: OWASP ZAP Scan
-      uses: owasp/zap-full-scan-action@v2.3.0
+      uses: zaproxy/action-full-scan@v0.4.0
       with:
         target: https://magik3a.github.io/dev.bg
         recursive: true

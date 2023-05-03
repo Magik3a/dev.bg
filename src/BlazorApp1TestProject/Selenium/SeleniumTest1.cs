@@ -44,7 +44,6 @@ namespace BlazorApp1TestProject.Selenium
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement button = wait.Until(e => e.FindElement(By.ClassName("btn")));
-
             button.Click();
             Assert.AreEqual(driver.FindElement(By.TagName("p")).Text, "Current count: 1");
 
