@@ -28,7 +28,7 @@ jobs:
       run: dotnet build src/BlazorApp1TestProject/BlazorApp1TestProject.csproj --configuration Release
 
     - name: Test
-      run: dotnet test --filter TestCategory=Selenium src/BlazorApp1TestProject/BlazorApp1TestProject.csproj --no-restore --verbosity normal --logger trx --results-directory "BlazorApp1TestResults"
+      run: dotnet test --configuration Release --filter TestCategory=Selenium src/BlazorApp1TestProject/BlazorApp1TestProject.csproj --no-restore --verbosity normal --logger trx --results-directory "BlazorApp1TestResults"
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
       with:
