@@ -45,7 +45,7 @@ jobs:
     
     # copy index.html to 404.html to serve the same file when a file is not found
     - name: copy index.html to 404.html
-      run: cp blazorapp1/wwwroot/index.html release/wwwroot/404.html
+      run: cp blazorapp1/wwwroot/index.html blazorapp1/wwwroot/404.html
     # changes the base-tag in index.html from '/' to 'dev.bg' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html 
       run: sed -i 's/<base href="\/" \/>/<base href="\/dev.bg\/" \/>/g' blazorapp1/wwwroot/index.html
