@@ -11,7 +11,12 @@ namespace BlazorApp1TestProject.Selenium
         public static void ClassInitialize(TestContext context)
         {
             // initialize the web driver
-            driver = new ChromeDriver();
+            var chromeOptions = new ChromeOptions();
+#if !DEBUG
+            chromeOptions.AddArguments("--headless");
+#endif
+            driver = new ChromeDriver(chromeOptions);
+            
         }
 
         [ClassCleanup] // Runs once after all tests in this class are executed.
