@@ -13,23 +13,6 @@
     <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
-
-    <script>
-        // set base href dynamically based on hosting location
-        var base = document.createElement('base');
-        var newBase = `${window.location.pathname}`;
-
-        var secondSlash = newBase.indexOf("/", 1);
-        newBase = newBase.substr(0, secondSlash);
-
-        // Ensure initial slash present
-        newBase = (newBase.startsWith("/") ? "" : "/") + newBase;
-        // Ensure trailing slash present
-        newBase += (newBase.endsWith("/") ? "" : "/");
-        base.href = newBase;
-        console.log(`Base href set to ${newBase}`);
-        document.getElementsByTagName('head')[0].appendChild(base);
-    </script>
 </head>
 
 <body>
