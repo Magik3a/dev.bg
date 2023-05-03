@@ -1,3 +1,5 @@
+using OpenQA.Selenium.Support.UI;
+
 namespace BlazorApp1TestProject.Selenium
 {
     [TestClass, TestCategory("Selenium")] // class containing the unit tests. 
@@ -29,7 +31,11 @@ namespace BlazorApp1TestProject.Selenium
         public void TestMethod2()
         {
             driver.Url = "https://magik3a.github.io/dev.bg/counter";
-            driver.FindElement(By.TagName("button")).Click();
+
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement button = wait.Until(e => e.FindElement(By.ClassName("btn")));
+
+            button.Click();
             Assert.AreEqual(driver.FindElement(By.TagName("p")).Text, "Current count: 1");
 
         }
