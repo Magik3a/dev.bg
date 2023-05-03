@@ -14,6 +14,8 @@ namespace BlazorApp1TestProject.Selenium
             var chromeOptions = new ChromeOptions();
 #if !DEBUG
             chromeOptions.AddArguments("--headless");
+            chromeOptions.AddArguments("--no-sandbox");
+            chromeOptions.AddArguments("--disable-dev-shm-usage");
 #endif
             driver = new ChromeDriver(chromeOptions);
             
