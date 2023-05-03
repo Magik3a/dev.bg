@@ -1,4 +1,4 @@
-name: .NET Selenium Tests
+name: Automation Tests - .NET Selenium
 
 # Only trigger, when the build workflow succeeded
 on:
@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
   
     # use ubuntu-latest image to run steps on
     runs-on: ubuntu-latest
