@@ -17,3 +17,5 @@
 [![Security Scan - CodeQL GitHub](https://github.com/Magik3a/dev.bg/actions/workflows/codeql.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/codeql.yml)
 
 [![Security Scan - OWASP ZAP Scan](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-security-scan.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-security-scan.yml)
+
+![DevOps](https://github.com/Magik3a/dev.bg/blob/main/articles/dev-ops-diagram.png?raw=true)
