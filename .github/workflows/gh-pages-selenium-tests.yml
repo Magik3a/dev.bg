@@ -45,6 +45,4 @@ jobs:
       if: always()
       with:
         files: |
-          BlazorApp1TestResults/**/*.xml
           BlazorApp1TestResults/**/*.trx
-          test-results/**/*.json
