@@ -19,7 +19,7 @@ jobs:
       
     # publishes Blazor project to the release-folder
     # uses  -p:GHPages=true comes from > dotnet add package PublishSPAforGitHubPages.Build
-    - name: Publish .NET Core Project
+    - name: Publish BlazorApp1
       run: dotnet publish src/BlazorApp1/BlazorApp1.csproj -c Release -o blazorapp1 -p:GHPages=true /p:AssemblyVersion=1.0.0.${{ github.run_number }} /p:Version=1.0.0.${{ github.run_number }}
       
     - name: Upload artifact
@@ -28,3 +28,12 @@ jobs:
         name: blazorapp1
         # Upload wwwroot only
         path: 'blazorapp1/wwwroot/'
+
+    - name: Publish BlazorApp1-Api
+      run: dotnet publish src/BlazorApp1Api/BlazorApp1Api.csproj -c Release -o blazorapp1-api /p:AssemblyVersion=1.0.0.${{ github.run_number }} /p:Version=1.0.0.${{ github.run_number }}
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: blazorapp1-api
+        path: 'blazorapp1-api'
