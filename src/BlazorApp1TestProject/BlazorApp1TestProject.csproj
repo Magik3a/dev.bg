@@ -17,4 +17,8 @@
     <PackageReference Include="Selenium.WebDriver" Version="4.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorApp1\BlazorApp1.csproj" />
+  </ItemGroup>
+
 </Project>
