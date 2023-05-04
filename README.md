@@ -34,8 +34,8 @@
 
 ## Continuous Security (CS) 👮‍
 
-| Security Tool | Security Scan Status |
-|--- | --- |
+| Security Tool | Security Scan Status | Workflow |
+|--- | --- | --- |
 | [CodeQL](https://codeql.github.com/) | [![Security Scan - CodeQL GitHub](https://github.com/Magik3a/dev.bg/actions/workflows/codeql.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/codeql.yml) |  [Action.yml](https://github.com/Magik3a/dev.bg/blob/main/.github/workflows/codeql.yml) |
 | [OWASP ZAP Scan](https://github.com/marketplace/actions/owasp-zap-full-scan) | [![Security Scan - OWASP ZAP Scan](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-security-scan.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-security-scan.yml) | [Action.yml](https://github.com/Magik3a/dev.bg/blob/main/.github/workflows/gh-pages-security-scan.yml) |
 
