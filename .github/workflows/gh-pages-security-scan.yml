@@ -3,7 +3,7 @@ name: Security Scan - OWASP ZAP Scan
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["Deploy static content to Pages"]
+    workflows: ["Build and Deploy - GitHub Pages"]
     types:
       - completed
   # Allows you to run this workflow manually from the Actions tab

@@ -3,7 +3,7 @@ name: Automation Tests - .NET Selenium
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["Deploy static content to Pages"]
+    workflows: ["Build and Deploy - GitHub Pages"]
     types:
       - completed
 
