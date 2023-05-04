@@ -12,7 +12,7 @@
 
 [![Automation Tests - .NET Selenium](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-selenium-tests.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-selenium-tests.yml)
 
-## Security Scans 👮‍
+## Continuous Security (CS) 👮‍
 
 [![Security Scan - CodeQL GitHub](https://github.com/Magik3a/dev.bg/actions/workflows/codeql.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/codeql.yml)
 
