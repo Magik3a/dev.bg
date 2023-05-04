@@ -12,8 +12,8 @@
 
 | Test Sites | URL | Status | 
 |--- | --- | --- |
-| Azure Staic Web App | https://polite-hill-06a5a4f03.3.azurestaticapps.net/ | [![Build and Deploy - Azure Static Web Apps CI/CD](https://github.com/Magik3a/dev.bg/actions/workflows/azure-static-web-apps-polite-hill-06a5a4f03.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/azure-static-web-apps-polite-hill-06a5a4f03.yml) |
-| Github Pages | https://magik3a.github.io/dev.bg/ | [![Build and Deploy - GitHub Pages CI/CD](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-blazorapp1.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-blazorapp1.yml) |
+| [Azure Static App](https://azure.microsoft.com/en-us/products/app-service/static) | https://polite-hill-06a5a4f03.3.azurestaticapps.net/ | [![Build and Deploy - Azure Static Web Apps CI/CD](https://github.com/Magik3a/dev.bg/actions/workflows/azure-static-web-apps-polite-hill-06a5a4f03.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/azure-static-web-apps-polite-hill-06a5a4f03.yml) |
+| [GitHub Pages](https://pages.github.com/) | https://magik3a.github.io/dev.bg/ | [![Build and Deploy - GitHub Pages CI/CD](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-blazorapp1.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-blazorapp1.yml) |
 
 
 
