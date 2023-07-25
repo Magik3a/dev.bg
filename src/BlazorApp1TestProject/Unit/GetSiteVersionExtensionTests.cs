@@ -9,7 +9,7 @@ namespace BlazorApp1TestProject.Unit
         public void GetSiteVersionTest()
         {
             var version = GetSiteVersionExtension.GetSiteVersion();
-            Assert.AreEqual(version, new Version(1, 0, 0, 0));
+            Assert.AreEqual(version, new Version(1, 0, 0, 1));
         }
     }
 }
