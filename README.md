@@ -23,6 +23,7 @@
 
 | Test Sites | URL | Deploy Status | Workflow |
 |--- | --- | --- | --- |
+| [BlazorApp1 - Docker](https://github.com/Magik3a?tab=packages&repo_name=dev.bg) | https://localhost:7018 | [![Build BlazorApp1 - Docker](https://github.com/Magik3a/dev.bg/actions/workflows/blazorapp1-docker-github.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/blazorapp1-docker-github.yml) | [Action.yml](https://github.com/Magik3a/dev.bg/actions/workflows/blazorapp1-docker-github.yml) |
 | [Azure Static App](https://azure.microsoft.com/en-us/products/app-service/static) | [Check Here](https://polite-hill-06a5a4f03.3.azurestaticapps.net/) | [![Build and Deploy - Azure Static Web Apps CI/CD](https://github.com/Magik3a/dev.bg/actions/workflows/azure-static-web-apps-polite-hill-06a5a4f03.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/azure-static-web-apps-polite-hill-06a5a4f03.yml) | [Action.yml](https://github.com/Magik3a/dev.bg/blob/main/.github/workflows/azure-static-web-apps-polite-hill-06a5a4f03.yml) | 
 | [GitHub Pages](https://pages.github.com/) | https://magik3a.github.io/dev.bg/ | [![Build and Deploy - GitHub Pages CI/CD](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-blazorapp1.yml/badge.svg)](https://github.com/Magik3a/dev.bg/actions/workflows/gh-pages-blazorapp1.yml) | [Action.yml](https://github.com/Magik3a/dev.bg/blob/main/.github/workflows/gh-pages-blazorapp1.yml) |
 
