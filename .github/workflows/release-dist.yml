@@ -1,0 +1,99 @@
+name: Release Distribution Packages
+
+on:
+  repository_dispatch:
+    types: [build_success]
+  workflow_dispatch:
+
+# Allow one concurrent deployment
+concurrency:
+  group: "release"
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    name: Release Artifacts
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+    
+      - name: Get version
+        id: get_version
+        run: |
+          VER=$(cat VERSION)
+          IFS='.' #setting comma as delimiter  
+          read -a splittedversion <<<"$VER" #reading str as an array as tokens separated by IFS  
+          VER_LONG="${splittedversion[0]}.${splittedversion[1]}.${{github.run_number}}"
+          echo "VERSION_CI=$VER_LONG" >> $GITHUB_ENV
+
+
+      - name: Set version
+        id: set_version
+        run: |
+          echo "${{ env.VERSION_CI }}" > VERSION
+          cat VERSION
+
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          # Optional. Commit message for the created commit.
+          # Defaults to "Apply automatic changes"
+          commit_message: New Release - ${{ env.VERSION_CI }}
+                    
+          # Optional. Local file path to the repository.
+          # Defaults to the root of the repository.
+          repository: .
+
+          # Optional. Tag name being created in the local repository and 
+          # pushed to remote repository and defined branch.
+          tagging_message: ${{ env.VERSION_CI }}
+          
+      - name: Download artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          # Optional, GitHub token, a Personal Access Token with `public_repo` scope if needed
+          # Required, if the artifact is from a different repo
+          # Required, if the repo is private a Personal Access Token with `repo` scope is needed
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          # Optional, workflow file name or ID
+          # If not specified, will be inferred from run_id (if run_id is specified), or will be the current workflow
+          workflow: continuous-integration-blazorapp1.yml
+          # Optional, the status or conclusion of a completed workflow to search for
+          # Can be one of a workflow conclusion:
+          #   "failure", "success", "neutral", "cancelled", "skipped", "timed_out", "action_required"
+          # Or a workflow status:
+          #   "completed", "in_progress", "queued"
+          # Use the empty string ("") to ignore status or conclusion in the search
+          workflow_conclusion: success
+
+      - name: Create Release
+        id: create_release
+        # Drafts your next Release notes as Pull Requests are merged into "master"
+        uses: release-drafter/release-drafter@v5
+        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+        with:
+          # config-name: my-config.yml
+          # disable-autolabeler: true
+          publish: true
+          version: ${{ env.VERSION_CI }}
+          tag: ${{ env.VERSION_CI }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      
+    # - name: Release Upload Assets
+    #   uses: softprops/action-gh-release@v1
+    #   with:
+    #     tag_name: ${{ steps.get_version.outputs.VERSION }}
+    #     draft: false
+    #     # TODO: Missing Apple app, the build is with a lot of files 
+    #     files: |
+    #       blazorapp1.zip
+    #       blazorapp1-api.zip
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
