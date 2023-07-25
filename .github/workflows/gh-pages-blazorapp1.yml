@@ -57,7 +57,7 @@ jobs:
       uses: vers-one/dotnet-project-version-updater@v1.2
       with:
         # Project file path
-        file: "src/blazorapp1/**/*.csproj"
+        file: "src/BlazorApp1/**/*.csproj"
         # New version
         version: "${{ env.VERSION_CI }}"
         
