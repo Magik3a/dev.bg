@@ -2,8 +2,13 @@
   "profiles": {
     "BlazorApp1Api": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7268",
-      "launchBrowser": false
+      "commandLineArgs": "--port 7268"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 32961,
+      "useSSL": false
     }
   }
 }

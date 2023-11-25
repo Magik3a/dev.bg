@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS publish
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS publish
 WORKDIR /src
 COPY . .
 RUN dotnet publish "BlazorApp1/BlazorApp1.csproj" -c Release -o /app/publish
