@@ -1,16 +1,13 @@
 version: '3.4'
 
 services:
-
   blazorapp1:
-    image: blazorapp1
+    image: blazorapp1    
     build:
       context: .
       dockerfile: BlazorApp1/Dockerfile
     ports:
       - 7018:80
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
 
   blazorapp1api:
     image: blazorapp1api
@@ -19,5 +16,12 @@ services:
       dockerfile: BlazorApp1Api/Dockerfile
     ports:
       - 7268:80
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+
+  monitoring:
+    image: monitoring
+    build:
+      context: .
+      dockerfile: WebApplication1/Dockerfile
+    ports:
+      - 8080:8080
+      - 8081:8081

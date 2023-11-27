@@ -3,14 +3,11 @@
 FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated8.0 AS base
 WORKDIR /home/site/wwwroot
 EXPOSE 8080
-
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS publish
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src/BlazorApp1Api
 COPY . .
-
 RUN dotnet publish "./BlazorApp1Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-
 FROM base AS final
 WORKDIR /home/site/wwwroot
 COPY --from=publish /app/publish .
